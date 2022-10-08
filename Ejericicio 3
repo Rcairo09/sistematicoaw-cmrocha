@@ -1,0 +1,13 @@
+USE AdventureWorks2019
+GO
+
+CREATE LOGIN VendedoresUser WITH PASWORD = 'pasword'
+GO
+CREATE USER CmRochaM FOR LOGIN VendedoresUser WITH DEFAULT_SCHEMA =Sales;
+GO
+CREATE ROLE Vendedores AUTHORIZATION [CmRochaM]
+GO
+GRANT INSERT ON SCHEMA::Sales TO Vendedores
+GO
+GRANT UPDATE ON SCHEMA::Sales TO Vendedores
+GO
